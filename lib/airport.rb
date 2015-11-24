@@ -1,8 +1,11 @@
+require 'weather_report.rb'
+
 class Airport
 
-	def initialize(capacity)
+	def initialize(capacity, weather_report)
 		@capacity = capacity
 		@planes = []
+		@weather_report = weather_report
 	end
 
 	def land(plane)
@@ -22,7 +25,7 @@ class Airport
 	end
 
 	def stormy?
-		rand(1..6) > 4
+		@weather_report.stormy?
 	end
 
 end
