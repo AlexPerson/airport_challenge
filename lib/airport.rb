@@ -1,8 +1,9 @@
 require 'weather_report.rb'
 
 class Airport
-
-	def initialize(capacity, weather_report)
+	DEFAULT_CAPACITY = 20
+	
+	def initialize(weather_report, capacity = DEFAULT_CAPACITY)
 		@capacity = capacity
 		@planes = []
 		@weather_report = weather_report
