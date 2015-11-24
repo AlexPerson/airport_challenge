@@ -2,7 +2,7 @@ require 'weather_report.rb'
 
 class Airport
 	DEFAULT_CAPACITY = 20
-	
+
 	def initialize(weather_report, capacity = DEFAULT_CAPACITY)
 		@capacity = capacity
 		@planes = []
@@ -18,6 +18,7 @@ class Airport
 	def take_off(plane)
 		raise 'Plane cannot take off: weather is stormy' if stormy?
 		raise 'Cannot take off plane: plane is not at this airport' unless at_airport?(plane)
+		plane
 	end
 
 	private
